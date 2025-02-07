@@ -1,0 +1,19 @@
+.card:hover .hover-part {
+  transform: translateY(-80%);
+}
+
+@media screen and (max-width: 768px) {
+  main .section {
+    padding-inline: 10px !important;
+  }
+  .card {
+    width: 100% !important;
+    height: auto;
+  }
+  .card:hover .hover-part {
+    all: unset;
+  }
+  .hiden-part {
+    position: unset;
+  }
+}

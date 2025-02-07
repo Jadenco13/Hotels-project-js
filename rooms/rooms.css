@@ -1,0 +1,26 @@
+.room-types button {
+    font-weight: normal;
+    text-decoration: none;
+    color: grey;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    transition: 1s;
+    padding: 10px;
+}
+
+.room-types button:hover {
+    background-color: grey;
+    color: white !important;
+}
+
+.room-types button:focus {
+    background-color: aqua;
+    color: white;
+}
+
+.myFont {
+    font-size: 12px;
+}
+
+

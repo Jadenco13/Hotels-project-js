@@ -1,0 +1,200 @@
+nav img {
+  width: 150px;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: grey;
+}
+
+ul li:hover a {
+  cursor: pointer;
+  color: rgb(0, 234, 255) !important;
+  transition: 1s;
+}
+
+.bgImage {
+  background-image: url("./images/bg-image/slide-bg.jpg");
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+}
+
+.bgImage div {
+  text-shadow: -1px 2px 5px black;
+}
+
+main {
+  margin-top: 56px;
+}
+
+.nav-ul-2 {
+  top: 55px;
+}
+
+.secondNav {
+  display: block !important;
+}
+
+.see-hotels-button {
+  background: rgb(236, 49, 249);
+  background: linear-gradient(
+    0deg,
+    rgba(236, 49, 249, 1) 0%,
+    rgba(244, 167, 255, 1) 100%
+  );
+  color: white;
+  border-radius: 10px;
+  border-color: #b90a96;
+  padding: 13px 18px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.card:hover .hover-part {
+  transform: translateY(-78%);
+  transition: 0.3s;
+}
+
+.hover-part {
+  transition: 0.3s;
+}
+
+.hiden-part {
+  position: absolute;
+}
+
+.card .card-booking-button {
+  background-color: rgb(83, 220, 239);
+  text-shadow: rgb(80, 135, 142) 0px -1px 0px;
+  border-color: rgb(39, 149, 163);
+  padding: 6px 12px;
+  filter: brightness(95%);
+}
+
+.card .card-booking-button:hover {
+  filter: brightness(100%);
+}
+
+.usp-icons > div {
+  padding: 30px 36px;
+}
+
+.usp-icons a:hover {
+  color: grey !important;
+  transition: 0.5s;
+}
+
+.icon-div {
+  width: 80px;
+  height: 80px;
+}
+
+.icon-animation:hover {
+  background-color: #0dcaf0;
+  transition: 1s;
+}
+
+.icon-animation:hover i {
+  animation-name: icon-animation;
+  color: white !important;
+  animation-duration: 1s;
+  transition: 1s;
+}
+
+@keyframes icon-animation {
+  0% {
+    transform: rotate(90deg);
+  }
+  10% {
+    transform: rotate(-80deg);
+  }
+  20% {
+    transform: rotate(70deg);
+  }
+  30% {
+    transform: rotate(-60deg);
+  }
+  40% {
+    transform: rotate(50deg);
+  }
+  50% {
+    transform: rotate(-40deg);
+  }
+  60% {
+    transform: rotate(30deg);
+  }
+  70% {
+    transform: rotate(-20deg);
+  }
+  80% {
+    transform: rotate(10deg);
+  }
+  90% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+.show-up-button {
+  display: block;
+  right: 20px;
+  bottom: 20px;
+  height: 75px;
+  width: 75px;
+  font-size: 25px;
+  border-radius: 50%;
+  color: #0dcaf0;
+  background-color: rgba(128, 128, 128, 0.4);
+  transition: 1s;
+}
+
+.show-up-button:hover {
+  background-color: #0dcaf087;
+  color: black;
+}
+
+.hide-element {
+  display: none;
+}
+
+footer {
+  background-color: #272727;
+  padding: 30px 0;
+  margin-top: 307px;
+  height: 14px;
+  bottom: 0;
+}
+
+footer small {
+  padding-left: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-ul-2 {
+    display: none !important;
+  }
+  .bgImage div {
+    top: 100px;
+    right: 50px;
+    font-size: small !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 100% !important;
+    height: auto;
+  }
+  .card:hover .hover-part {
+    all: unset;
+  }
+  .hiden-part {
+    position: unset;
+  }
+}

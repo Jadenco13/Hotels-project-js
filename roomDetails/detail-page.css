@@ -1,0 +1,56 @@
+.up-section {
+  padding: 50px 100px;
+}
+
+.field {
+  padding-bottom: 10px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input {
+  outline: none;
+}
+
+.book-now-button {
+  background-color: rgb(83, 220, 239);
+  text-shadow: rgb(80, 135, 142) 0px -1px 0px;
+  border-color: rgb(39, 149, 163);
+  height: 30px;
+}
+
+table i {
+  color: white;
+  background-color: #75C5CF;
+  border-radius: 50%;
+  border: none;
+}
+
+.tableBgColor {
+  background-color: #F7FBFC;
+}
+
+.img {
+  float: right;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 1025px) {
+  .card {
+    width: 100% !important;
+    height: auto;
+  }
+  .card:hover .hover-part {
+    all: unset;
+  }
+  .hiden-part {
+    position: unset;
+  }
+}
