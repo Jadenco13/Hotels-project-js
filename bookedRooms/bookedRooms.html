@@ -101,7 +101,7 @@
       </ul>
     </header>
     <main class="container-xxl">
-      <table class="w-100">
+      <table class="w-100 d-none d-md-block">
         <thead>
           <tr class="border-bottom">
             <th class="text-center">Hotel</th>
@@ -116,6 +116,9 @@
         </thead>
         <tbody class="bookedRooms"></tbody>
       </table>
+      <div class="d-md-none w-100">
+        <div class="bookedCards"></div>
+      </div>
       <div
         onclick="scrollPageUp()"
         class="up-button position-fixed text-center align-content-center"

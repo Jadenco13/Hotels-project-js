@@ -8,11 +8,49 @@ navBarButton.addEventListener("click", () => {
 let ulRoomTypes = document.querySelector(".room-types");
 let showFiltredRooms = document.querySelector(".showRooms");
 let mainFilterForm = document.querySelector(".mainFilterForm");
-showChoosenRooms();
+
+if (sessionStorage.getItem("hotelId")) {
+  showFiltredRooms.innerHTML = "";
+  let hotelId = sessionStorage.getItem("hotelId");
+  fetch(`https://hotelbooking.stepprojects.ge/api/Hotels/GetHotel/${hotelId}`)
+    .then((res) => res.json())
+    .then((data) => {
+      data.rooms.forEach((el) => {
+        showFiltredRooms.innerHTML += `
+               <div class="card overflow-hidden" style="width: 20rem; height: 18:rem">
+                <div class="hover-part">
+                  <div>
+                    <img
+                    src="${el.images[0].source}"
+                    class="card-img-top"
+                      alt="..."
+                      />
+                      </div>
+                      <div class="room-info d-flex justify-content-between">
+                      <div class="align-content-center"><b class="myFont text-wrap">${el.name}</b></div>
+                      <div
+                      class="px-4 py-1 border-start d-flex flex-column justify-content-center align-items-center"
+                    >
+                    <h5 class="fw-bold text-info">&#8364; ${el.pricePerNight}</h5>
+                    <small class="text-secondary">a night</small>
+                    </div>
+                  </div>
+                  <div class="hiden-part w-100">
+                    <button onclick="goToRoomBooking(${el.id})" class="card-booking-button w-100 text-light">BOOK NOW</button>
+                  </div>
+                  </div>
+                  </div>
+                  `;
+      });
+    })
+    .catch((err) => err);
+} else {
+  showChoosenRooms();
+}
+
 fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetRoomTypes")
   .then((res) => res.json())
   .then((data) => {
-    console.log(data);
     data.forEach((el) => {
       ulRoomTypes.innerHTML += `
         <li><button onclick="showChoosenRooms(${el.id})">${el.name}</button></li>
@@ -36,7 +74,6 @@ function showChoosenRooms(roomTypeId) {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         data.forEach((el) => {
           showFiltredRooms.innerHTML += `
              <div class="card overflow-hidden" style="width: 20rem; height: 18:rem">
@@ -70,7 +107,6 @@ function showChoosenRooms(roomTypeId) {
     fetch("https://hotelbooking.stepprojects.ge/api/Rooms/GetAll")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         data.forEach((el) => {
           showFiltredRooms.innerHTML += `
              <div class="card overflow-hidden" style="width: 20rem; height: 18:rem">

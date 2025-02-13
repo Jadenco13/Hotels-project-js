@@ -25,7 +25,7 @@ fetch("https://hotelbooking.stepprojects.ge/api/Hotels/GetAll")
                   <div class="align-content-center p-3"><b>${el.name}</b></div>
                 </div>
                 <div class="hiden-part w-100">
-                  <button onclick="goToRoomsPage()" class="card-booking-button w-100 text-light">VIEW ROOMS</button>
+                  <button onclick="goToRoomsPage(${el.id})" class="card-booking-button w-100 text-light">VIEW ROOMS</button>
                 </div>
               </div>
             </div>
@@ -34,6 +34,7 @@ fetch("https://hotelbooking.stepprojects.ge/api/Hotels/GetAll")
 })
   .catch((err) => err);
 
-function goToRoomsPage() {
+function goToRoomsPage(hotelId) {
+  sessionStorage.setItem('hotelId', hotelId)
   window.location.href = '../rooms/rooms.html'
 }
